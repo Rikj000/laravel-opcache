@@ -1,6 +1,6 @@
 <?php
 
-namespace Appstract\Opcache\Test;
+namespace JustRaviga\Opcache\Test;
 
 use Artisan;
 
@@ -13,7 +13,7 @@ class ConfigTest extends TestCase
 
         $output = Artisan::output();
 
-        $this->assertContains('Version info', $output);
-        $this->assertContains('Configuration info', $output);
+        $this->assertStringContainsStringIgnoringCase('Version info', $output);
+        $this->assertStringContainsStringIgnoringCase('Configuration info', $output);
     }
 }

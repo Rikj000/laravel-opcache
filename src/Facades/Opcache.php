@@ -1,13 +1,14 @@
 <?php
 
-namespace Appstract\Opcache;
+namespace JustRaviga\Opcache\Facades;
 
+use JustRaviga\Opcache\OpcacheActions;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Appstract\Opcache\OpcacheClass
+ * @mixin  OpcacheActions
  */
-class OpcacheFacade extends Facade
+class Opcache extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +17,6 @@ class OpcacheFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return OpcacheClass::class;
+        return OpcacheActions::class;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Appstract\Opcache\Test;
+namespace JustRaviga\Opcache\Test;
 
 use Artisan;
 
@@ -13,6 +13,6 @@ class ClearTest extends TestCase
 
         $output = Artisan::output();
 
-        $this->assertContains('cleared', $output);
+        $this->assertStringContainsStringIgnoringCase('cleared', $output);
     }
 }

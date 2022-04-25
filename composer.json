@@ -1,26 +1,26 @@
 {
-    "name": "appstract/laravel-opcache",
+    "name": "justraviga/laravel-opcache",
     "description": "PHP OPcache Artisan commands for Laravel.",
     "keywords": [
-        "appstract",
+        "justRaviga",
         "opcache",
         "laravel",
         "php"
     ],
-    "homepage": "https://github.com/appstract/laravel-opcache",
+    "homepage": "https://github.com/justRaviga/laravel-opcache",
     "license": "MIT",
     "authors": [
         {
             "name": "Olav van Schie",
-            "email": "mail@appstract.nl",
-            "homepage": "https://appstract.nl",
+            "email": "mail@justRaviga.nl",
+            "homepage": "https://justRaviga.nl",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=7.4",
         "laravel/framework": ">=7.0",
-        "guzzlehttp/guzzle": "^6.3.1|^7.0"
+        "ext-zend-opcache": "*"
     },
     "require-dev": {
         "orchestra/testbench": "^5.0",
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Appstract\\Opcache\\": "src"
+            "JustRaviga\\Opcache\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Appstract\\Opcache\\Test\\": "tests"
+            "JustRaviga\\Opcache\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -45,8 +45,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Appstract\\Opcache\\OpcacheServiceProvider"
-            ]
+                "JustRaviga\\Opcache\\OpcacheServiceProvider"
+            ],
+            "aliases": {
+                "Opcache": "Barryvdh\\Debugbar\\Facade"
+            }
         }
     }
 }

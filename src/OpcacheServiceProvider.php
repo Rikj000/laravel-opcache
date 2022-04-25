@@ -1,6 +1,6 @@
 <?php
 
-namespace Appstract\Opcache;
+namespace JustRaviga\Opcache;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -32,14 +32,5 @@ class OpcacheServiceProvider extends ServiceProvider
     {
         // config
         $this->mergeConfigFrom(__DIR__.'/../config/opcache.php', 'opcache');
-
-        // bind routes
-        $this->app->router->group([
-            'middleware'    => [\Appstract\Opcache\Http\Middleware\Request::class],
-            'prefix'        => config('opcache.prefix'),
-            'namespace'     => 'Appstract\Opcache\Http\Controllers',
-        ], function ($router) {
-            require __DIR__.'/Http/routes.php';
-        });
     }
 }

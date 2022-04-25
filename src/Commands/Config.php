@@ -1,14 +1,12 @@
 <?php
 
-namespace Appstract\Opcache\Commands;
+namespace JustRaviga\Opcache\Commands;
 
-use Appstract\Opcache\CreatesRequest;
 use Illuminate\Console\Command;
+use JustRaviga\Opcache\Facades\Opcache;
 
 class Config extends Command
 {
-    use CreatesRequest;
-
     /**
      * The console command name.
      *
@@ -30,15 +28,14 @@ class Config extends Command
      */
     public function handle()
     {
-        $response = $this->sendRequest('config');
-        $response->throw();
+        $config = Opcache::getConfig();
 
-        if ($response['result']) {
+        if ($config) {
             $this->line('Version info:');
-            $this->table([], $this->parseTable($response['result']['version']));
+            $this->table([], $this->parseTable($config['version']));
 
             $this->line(PHP_EOL.'Configuration info:');
-            $this->table([], $this->parseTable($response['result']['directives']));
+            $this->table([], $this->parseTable($config['directives']));
         } else {
             $this->error('OPcache not configured');
 

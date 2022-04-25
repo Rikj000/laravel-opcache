@@ -1,14 +1,12 @@
 <?php
 
-namespace Appstract\Opcache\Commands;
+namespace JustRaviga\Opcache\Commands;
 
-use Appstract\Opcache\CreatesRequest;
 use Illuminate\Console\Command;
+use JustRaviga\Opcache\Facades\Opcache;
 
 class Clear extends Command
 {
-    use CreatesRequest;
-
     /**
      * The console command name.
      *
@@ -30,10 +28,9 @@ class Clear extends Command
      */
     public function handle()
     {
-        $response = $this->sendRequest('clear');
-        $response->throw();
+        $cleared = Opcache::clear();
 
-        if ($response['result']) {
+        if ($cleared) {
             $this->info('OPcache cleared');
         } else {
             $this->error('OPcache not configured');

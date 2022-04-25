@@ -1,6 +1,6 @@
 <?php
 
-namespace Appstract\Opcache\Test;
+namespace JustRaviga\Opcache\Test;
 
 use Artisan;
 
@@ -13,8 +13,8 @@ class StatusTest extends TestCase
 
         $output = Artisan::output();
 
-        $this->assertContains('Memory usage:', $output);
-        $this->assertContains('Interned strings usage:', $output);
-        $this->assertContains('Statistics:', $output);
+        $this->assertStringContainsStringIgnoringCase('Memory usage:', $output);
+        $this->assertStringContainsStringIgnoringCase('Interned strings usage:', $output);
+        $this->assertStringContainsStringIgnoringCase('Statistics:', $output);
     }
 }

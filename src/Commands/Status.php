@@ -1,14 +1,12 @@
 <?php
 
-namespace Appstract\Opcache\Commands;
+namespace JustRaviga\Opcache\Commands;
 
-use Appstract\Opcache\CreatesRequest;
 use Illuminate\Console\Command;
+use JustRaviga\Opcache\Facades\Opcache;
 
 class Status extends Command
 {
-    use CreatesRequest;
-
     /**
      * The console command name.
      *
@@ -30,11 +28,10 @@ class Status extends Command
      */
     public function handle()
     {
-        $response = $this->sendRequest('status');
-        $response->throw();
+        $status = Opcache::getStatus();
 
-        if ($response['result']) {
-            $this->displayTables($response['result']);
+        if ($status) {
+            $this->displayTables($status);
         } else {
             $this->error('OPcache not configured');
 

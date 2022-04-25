@@ -1,24 +1,20 @@
 <?php
 
-namespace Appstract\Opcache\Commands;
+namespace JustRaviga\Opcache\Commands;
 
-use Appstract\Opcache\CreatesRequest;
 use Illuminate\Console\Command;
+use JustRaviga\Opcache\Facades\Opcache;
 
 class Compile extends Command
 {
-    use CreatesRequest;
-
     /**
      * The console command name.
-     *
      * @var string
      */
     protected $signature = 'opcache:compile {--force}';
 
     /**
      * The console command description.
-     *
      * @var string
      */
     protected $description = 'Pre-compile your application code';
@@ -30,15 +26,16 @@ class Compile extends Command
     {
         $this->line('Compiling scripts...');
 
-        $response = $this->sendRequest('compile', ['force' => $this->option('force') ?? false]);
-        $response->throw();
+        $result = Opcache::compile($this->option('force') ?? false);
 
-        if (isset($response['result']['message'])) {
-            $this->warn($response['result']['message']);
+        if (isset($result['message'])) {
+            $this->warn($result['message']);
 
             return 1;
-        } elseif ($response['result']) {
-            $this->info(sprintf('%s of %s files compiled', $response['result']['compiled_count'], $response['result']['total_files_count']));
+        }
+
+        if ($result) {
+            $this->info(sprintf('%s of %s files compiled', $result['compiled_count'], $result['total_files_count']));
         } else {
             $this->error('OPcache not configured');
 
