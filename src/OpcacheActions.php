@@ -76,7 +76,7 @@ class OpcacheActions
                     }
 
                     $compiled++;
-                } catch (\Exception $e) {
+                } catch (\Throwable $e) {
                 }
             });
 
