@@ -17,6 +17,6 @@ class Opcache extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return OpcacheActions::class;
+        return 'opcache';
     }
 }

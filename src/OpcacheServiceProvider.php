@@ -32,5 +32,9 @@ class OpcacheServiceProvider extends ServiceProvider
     {
         // config
         $this->mergeConfigFrom(__DIR__.'/../config/opcache.php', 'opcache');
+
+        $this->app->bind('opcache', function ($app) {
+            return new OpcacheActions();
+        });
     }
 }
