@@ -2,7 +2,9 @@
 
 namespace JustRaviga\Opcache;
 
+use Symfony\Component\ErrorHandler\Error\FatalError;
 use Symfony\Component\Finder\Finder;
+use Throwable;
 
 /**
  * Class OpcacheClass.
@@ -76,7 +78,7 @@ class OpcacheActions
                     }
 
                     $compiled++;
-                } catch (\Throwable $e) {
+                } catch (Throwable|FatalError $e) {
                 }
             });
 
