@@ -1,13 +1,15 @@
 <?php
 
-namespace Appstract\Opcache;
+namespace JustRaviga\Opcache;
 
+use Symfony\Component\ErrorHandler\Error\FatalError;
 use Symfony\Component\Finder\Finder;
+use Throwable;
 
 /**
  * Class OpcacheClass.
  */
-class OpcacheClass
+class OpcacheActions
 {
     /**
      * Clear OPcache.
@@ -17,6 +19,8 @@ class OpcacheClass
         if (function_exists('opcache_reset')) {
             return opcache_reset();
         }
+
+        return false;
     }
 
     /**
@@ -27,6 +31,8 @@ class OpcacheClass
         if (function_exists('opcache_get_configuration')) {
             return opcache_get_configuration();
         }
+
+        return false;
     }
 
     /**
@@ -37,17 +43,18 @@ class OpcacheClass
         if (function_exists('opcache_get_status')) {
             return opcache_get_status(false);
         }
+
+        return false;
     }
 
     /**
      * Pre-compile php scripts.
-     *
      * @param bool $force
      * @return array
      */
     public function compile($force = false)
     {
-        if (! ini_get('opcache.dups_fix') && ! $force) {
+        if (!ini_get('opcache.dups_fix') && !$force) {
             return ['message' => 'opcache.dups_fix must be enabled, or run with --force'];
         }
 
@@ -66,12 +73,12 @@ class OpcacheClass
             // optimized files
             $files->each(function ($file) use (&$compiled) {
                 try {
-                    if (! opcache_is_script_cached($file)) {
+                    if (!opcache_is_script_cached($file)) {
                         opcache_compile_file($file);
                     }
 
                     $compiled++;
-                } catch (\Exception $e) {
+                } catch (Throwable|FatalError $e) {
                 }
             });
 
@@ -80,5 +87,6 @@ class OpcacheClass
                 'compiled_count' => $compiled,
             ];
         }
+        return [];
     }
 }

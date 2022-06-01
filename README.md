@@ -1,12 +1,12 @@
 # Laravel OPcache
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/appstract/laravel-opcache.svg?style=flat-square)](https://packagist.org/packages/appstract/laravel-opcache)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/justRaviga/laravel-opcache.svg?style=flat-square)](https://packagist.org/packages/justRaviga/laravel-opcache)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/appstract/laravel-opcache.svg?style=flat-square)](https://packagist.org/packages/appstract/laravel-opcache)
+[![Total Downloads](https://img.shields.io/packagist/dt/justRaviga/laravel-opcache.svg?style=flat-square)](https://packagist.org/packages/justRaviga/laravel-opcache)
 
 This package contains some useful Artisan commands to work with PHP OPcache.
 
-#### If you want to learn more about OPcache and what it can do for your Laravel application, [read the article on Medium](https://medium.com/appstract/make-your-laravel-app-fly-with-php-opcache-9948db2a5f93#.bjrpj4h1c).
+#### If you want to learn more about OPcache and what it can do for your Laravel application, [read the article on Medium](https://medium.com/justRaviga/make-your-laravel-app-fly-with-php-opcache-9948db2a5f93#.bjrpj4h1c).
 
 ## Requirements
 This package requires Laravel 7 or newer.
@@ -16,13 +16,13 @@ This package requires Laravel 7 or newer.
 You can install the package via Composer:
 
 ``` bash
-composer require appstract/laravel-opcache
+composer require justRaviga/laravel-opcache
 ```
 
 If you need to change config values, you can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Appstract\Opcache\OpcacheServiceProvider" --tag="config"
+php artisan vendor:publish --provider="JustRaviga\Opcache\OpcacheServiceProvider" --tag="config"
 ```
 
 Make sure your APP_URL is set correctly in .env.
@@ -57,7 +57,7 @@ If you run into "Cannot redeclare class" errors, enable `opcache.dups_fix` or ad
 Programmatic usage:
 
 ```php
-use Appstract\Opcache\OpcacheFacade as OPcache;
+use JustRaviga\Opcache\Facades\Opcache as OPcache;
 
 ...
 
@@ -66,11 +66,11 @@ OPcache::clear();
 
 ## Contributing
 
-Contributions are welcome, [thanks to y'all](https://github.com/appstract/laravel-opcache/graphs/contributors) :)
+Contributions are welcome, [thanks to y'all](https://github.com/justRaviga/laravel-opcache/graphs/contributors) :)
 
-## About Appstract
+## About JustRaviga
 
-Appstract is a small team from The Netherlands. We create (open source) tools for webdevelopment.
+JustRaviga is a small team from The Netherlands. We create (open source) tools for webdevelopment.
 
 ## License
 

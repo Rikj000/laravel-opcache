@@ -1,6 +1,6 @@
 <?php
 
-namespace Appstract\Opcache\Test;
+namespace JustRaviga\Opcache\Test;
 
 use Artisan;
 
@@ -13,6 +13,6 @@ class CompileTest extends TestCase
 
         $output = Artisan::output();
 
-        $this->assertContains('files compiled', $output);
+        $this->assertStringContainsStringIgnoringCase('files compiled', $output);
     }
 }
