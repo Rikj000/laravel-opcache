@@ -1,6 +1,6 @@
 <?php
 
-namespace JustRaviga\Opcache;
+namespace Rikj000\Opcache;
 
 use Illuminate\Support\ServiceProvider;
 

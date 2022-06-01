@@ -1,6 +1,6 @@
 <?php
 
-namespace JustRaviga\Opcache;
+namespace Rikj000\Opcache;
 
 use Symfony\Component\ErrorHandler\Error\FatalError;
 use Symfony\Component\Finder\Finder;

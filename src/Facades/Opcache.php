@@ -1,8 +1,8 @@
 <?php
 
-namespace JustRaviga\Opcache\Facades;
+namespace Rikj000\Opcache\Facades;
 
-use JustRaviga\Opcache\OpcacheActions;
+use Rikj000\Opcache\OpcacheActions;
 use Illuminate\Support\Facades\Facade;
 
 /**

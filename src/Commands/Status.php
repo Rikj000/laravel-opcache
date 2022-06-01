@@ -1,9 +1,9 @@
 <?php
 
-namespace JustRaviga\Opcache\Commands;
+namespace Rikj000\Opcache\Commands;
 
 use Illuminate\Console\Command;
-use JustRaviga\Opcache\Facades\Opcache;
+use Rikj000\Opcache\Facades\Opcache;
 
 class Status extends Command
 {

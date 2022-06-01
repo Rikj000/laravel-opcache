@@ -1,19 +1,19 @@
 {
-    "name": "justraviga/laravel-opcache",
+    "name": "rikj000/laravel-opcache",
     "description": "PHP OPcache Artisan commands for Laravel.",
     "keywords": [
-        "justRaviga",
+        "rikj000",
         "opcache",
         "laravel",
         "php"
     ],
-    "homepage": "https://github.com/justRaviga/laravel-opcache",
+    "homepage": "https://github.com/rikj000/laravel-opcache",
     "license": "MIT",
     "authors": [
         {
-            "name": "Olav van Schie",
-            "email": "mail@justRaviga.nl",
-            "homepage": "https://justRaviga.nl",
+            "name": "Rik Helsen",
+            "email": "rik_helsen@hotmail.com",
+            "homepage": "https://github.com/rikj000",
             "role": "Developer"
         }
     ],
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "JustRaviga\\Opcache\\": "src"
+            "Rikj000\\Opcache\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JustRaviga\\Opcache\\Test\\": "tests"
+            "Rikj000\\Opcache\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -44,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JustRaviga\\Opcache\\OpcacheServiceProvider"
+                "Rikj000\\Opcache\\OpcacheServiceProvider"
             ]
         }
     }

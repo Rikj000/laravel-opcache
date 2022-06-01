@@ -1,6 +1,6 @@
 <?php
 
-namespace JustRaviga\Opcache\Test;
+namespace Rikj000\Opcache\Test;
 
 use Artisan;
 

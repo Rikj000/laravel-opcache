@@ -1,8 +1,8 @@
 <?php
 
-namespace JustRaviga\Opcache\Test;
+namespace Rikj000\Opcache\Test;
 
-use JustRaviga\Opcache\OpcacheServiceProvider;
+use Rikj000\Opcache\OpcacheServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
